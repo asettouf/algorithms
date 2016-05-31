@@ -1,3 +1,5 @@
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SortUtils {
 	
@@ -23,6 +25,25 @@ public class SortUtils {
 		}
 		printArray(arr, "After quicksorting");
 	}
+	
+	public static void randomizedQuickSort(int[] arr, int p, int r){
+		printArray(arr, "Before quicksorting");
+		if (p < r){
+			int q = randomizePartition(arr, p, r);
+			randomizedQuickSort(arr, p, q - 1);
+			randomizedQuickSort(arr, q  + 1, r);
+		}
+		printArray(arr, "After quicksorting");
+	}
+	public static int randomizePartition(int[] arr, int p, int r){
+		int i = ThreadLocalRandom.current().nextInt(p, r + 1);
+		int buff = arr[i];
+		arr[i] = arr[r];
+		arr[r] = buff;
+		return partition(arr, p, r);
+	}
+	
+	
 	
 	public static int partition(int[] arr, int p, int r){
 		int pivot = arr[r];

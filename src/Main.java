@@ -9,7 +9,8 @@ public class Main {
 
 	public static void testQuickSort(){
 		int[] tt = {16,4,10,14,7,9,3,2,8,1};
-		SortUtils.quickSort(tt, 0, tt.length - 1);
+//		SortUtils.quickSort(tt, 0, tt.length - 1);
+		SortUtils.randomizedQuickSort(tt, 0, tt.length - 1);
 	}
 	
 	
