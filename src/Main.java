@@ -4,9 +4,19 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//testHeap();
-		testQuickSort();
+//		testQuickSort();
+		testCountSort();
+		
 	}
 
+	public static void testCountSort(){
+		int[] tt = {2,3,5,0,3,6,3,3,8,1};
+		
+		int[] b = new int[tt.length];
+		b = SortUtils.countingSort(tt, 9);
+		SortUtils.printArray(b, "FINAL FLASH: ");
+		
+	}
 	public static void testQuickSort(){
 		int[] tt = {16,4,10,14,7,9,3,2,8,1};
 //		SortUtils.quickSort(tt, 0, tt.length - 1);

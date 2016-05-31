@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SortUtils {
@@ -7,6 +6,29 @@ public class SortUtils {
 		
 	}
 	
+	public static int[] countingSort(int[] arr, int k){
+		int[] res = new int[arr.length];
+		int[] c = new int[k];
+		for (int i = 0; i < k; i++){
+			c[i] = 0;
+		}
+		
+		for(int j = 0; j < arr.length; j++){
+			c[arr[j]] = c[arr[j]] + 1;
+		}
+		SortUtils.printArray(c, "c: ");
+		for (int i = 1; i < k; i++){
+			c[i] = c[i] + c[i-1];
+		}
+		SortUtils.printArray(c, "c: ");
+		SortUtils.printArray(arr, "arr: ");
+		for(int j = arr.length - 1; j >= 0; j--){
+			res[c[arr[j]]] = arr[j];
+			c[arr[j]]--;
+		}
+		
+		return res;
+	}
 	public static void printArray(int[] arr, String printBefore){
 		String res = "[";
 		for(int i = 0; i < arr.length ; i++){
