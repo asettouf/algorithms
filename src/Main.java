@@ -10,10 +10,10 @@ public class Main {
 	}
 
 	public static void testCountSort(){
-		int[] tt = {2,3,5,0,3,6,3,3,8,1};
+		int[] tt = {2,5,3,0,2,3,0,3};
 		
 		int[] b = new int[tt.length];
-		b = SortUtils.countingSort(tt, 9);
+		b = SortUtils.countingSort(tt, 6);
 		SortUtils.printArray(b, "FINAL FLASH: ");
 		
 	}

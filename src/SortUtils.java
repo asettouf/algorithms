@@ -23,8 +23,9 @@ public class SortUtils {
 		SortUtils.printArray(c, "c: ");
 		SortUtils.printArray(arr, "arr: ");
 		for(int j = arr.length - 1; j >= 0; j--){
-			res[c[arr[j]]] = arr[j];
-			c[arr[j]]--;
+			res[--c[arr[j]]] = arr[j];
+//			c[arr[j]] = c[arr[j]] - 1;
+			SortUtils.printArray(c, "c at step " + (j));
 		}
 		
 		return res;
