@@ -5,10 +5,16 @@ public class Main {
 		// TODO Auto-generated method stub
 		//testHeap();
 //		testQuickSort();
-		testCountSort();
-		
+//		testCountSort();
+		testSearch();
 	}
 
+	public static void testSearch(){
+		int[] tt = {16,4,10,14,7,9,3,2,8,1, 1, 1};
+		
+		int c = SelectionUtils.randomizedSelect(tt, 0, tt.length - 1, 3);
+		System.out.println("3rd smallest element is " + c);
+	}
 	public static void testCountSort(){
 		int[] tt = {2,5,3,0,2,3,0,3};
 		
